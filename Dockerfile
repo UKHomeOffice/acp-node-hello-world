@@ -1,5 +1,6 @@
 FROM node:6-alpine
-RUN adduser -S node-user
+RUN addgroup -S node
+RUN adduser -S node-user -G node
 USER node-user
 WORKDIR /src
 COPY . .
